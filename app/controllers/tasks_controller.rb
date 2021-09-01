@@ -9,6 +9,7 @@ class TasksController < ApplicationController
 
     def create
         Task.create(task_params)
+        
     end
 
     def edit
@@ -30,7 +31,7 @@ class TasksController < ApplicationController
     end
 
     private
-    def user_params
-        params.require(:user).permit(:name, :age)
+    def task_params
+        params.require(:task).permit(:title, :content)
     end
 end
